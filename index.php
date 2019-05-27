@@ -18,6 +18,8 @@ echo "<p>12 / 2 = ".$z / $a."</p>";
 echo "<hr>";
 
 
+
+//Funcções
 function func_localVar(){
 	$x = "<h2>This variable is from the function localVariable</h2>";
 	echo $x;
@@ -30,9 +32,15 @@ function func_globalVar(){
 	echo "<p>This function acess global variable $z </p>";
 }
 
+function func_globalIndex(){
+	echo $GLOBALS['x'] + $GLOBALS['y'];
+}
 
+
+
+//functions call
 func_localVar();
-func_globalVar()
-
+func_globalVar();
+func_globalIndex();
 
 ?>
