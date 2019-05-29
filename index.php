@@ -17,9 +17,7 @@ echo "<p>final count = $z, Thank you Mr - ".$name.$last_name." Come back ever!</
 echo "<p>12 / 2 = ".$z / $a."</p>";
 echo "<hr>";
 
-
-
-//Funcções
+//functions
 function func_localVar(){
 	$x = "<h2>This variable is from the function localVariable</h2>";
 	echo $x;
@@ -36,11 +34,26 @@ function func_globalIndex(){
 	echo $GLOBALS['x'] + $GLOBALS['y'];
 }
 
+function func_staticVar(){
+	static $StaticVar = 0;
+	echo $StaticVar;
+	$StaticVar++;
+
+	echo "<p> Static variables $StaticVar don't loss the value when functions wnd.";
+}
 
 
-//functions call
+//functions call, the value only run inside the function, it not pick variables outside the function
 func_localVar();
+
+//Get global vars by declaring
 func_globalVar();
+
+//Acess var using index of vars
 func_globalIndex();
 
+//dont loss value
+func_staticVar();
+func_staticVar();
+func_staticVar();
 ?>
