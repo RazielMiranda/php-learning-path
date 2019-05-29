@@ -12,6 +12,11 @@ echo ($x / $y);
 print $x / $y;
 print ($x / $y);
 
-print("<p>more or less different".$text);
+print("<p>more or less different ".$text);
+
+echo "<hr>";
+
+$intVal = 1248765342148
+
 
 ?>
