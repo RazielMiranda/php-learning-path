@@ -1,6 +1,7 @@
 <?php 
 //My php intro
 
+
 $text = "Outputs words";
 $y = 2;
 $x = 22;
@@ -16,7 +17,28 @@ print("<p>more or less different ".$text);
 
 echo "<hr>";
 
-$intVal = 1248765342148
+echo '<h1>Studies about type of variables</h1>';
 
+$intVal = 1248765342148;
+$floatVal = 1232.764;
+$falseVal = false;
+$trueVal = true;
+$arrayVal = array('PHP',7,'is very', "COOL!");
+
+$notNullVal = 'hey i am not null ';
+echo $notNullVal;
+$notNullVal = null;
+echo 'Now is null '.$notNullVal;
+
+var_dump($intVal);
+var_dump($floatVal);
+var_dump($falseVal, $trueVal);
+var_dump($arrayVal);
+
+echo '<hr>';
+
+echo '<h1>String PHP functions </h1>';
+
+echo 'Hello world, size of string = '.strlen('Hello world').'Number of word = '.str_word_count('Hello world ').strrev(' Hello world');
 
 ?>
