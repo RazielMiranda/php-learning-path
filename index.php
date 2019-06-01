@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<?php
+<?php include 'header.php';  ?>
+  
+  <body>
+      <?php require 'menu.php'?>
 
+        <?php
+            $var = 3 * 3;
+            echo $var;
+        ?>
+  </body>
 
-
-
-?>
-</body>
-</html>
+<?php include 'footer.php'; ?>
