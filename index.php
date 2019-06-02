@@ -1,21 +1,44 @@
 <?php
-	$mysqli = new mysqli('127.0.0.1', 'root', 'database@LOCAL', '');
+		$link = mysqli_connect('localhost','root','database@LOCAL');
+		if(!$link){
+				die('error'. mysqli_error());
+		}
+		$link->select_db("test");
 
-	if ($mysqli->connect_error) {
-	    die('Connect Error (' . $mysqli->connect_errno . ') '
-	            . $mysqli->connect_error);
-	}
-
-include 'header.php';  
+		include	'header.php';
 ?>
 
-  
-<body>
-      <?php require 'menu.php'?>
-</body>
 
 
-<?php 
-	include 'footer.php'; 
-	$mysqli->close();
+
+
+
+
+	<body>
+	
+		<?php require 'menu.php'?>
+		
+		<h1>
+			Minha lista de filmes: 
+		</h1>
+
+
+		<ul>	
+				<?php
+		   			$query = " SELECT * FROM  'filmes' ";
+			     	$result = $link->query($query);
+
+		    			while ($filme=$result->fetch_object() ) {
+		      				echo ("<li>".$filme->nome."<li>");
+		      			}
+      			
+      			?>
+      	</ul>
+	
+	</body>
+
+
+<?php
+		include 'footer.php'; 
+		mysqli_close($link);
 ?>
