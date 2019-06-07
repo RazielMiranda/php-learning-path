@@ -33,7 +33,7 @@ if (!$link) {
 		   			$query = " SELECT * FROM  'filmes' ";
 			     	$result = $link->query($query);
 
-		    			while ($filme = $result- >fetch()) {
+		    			while ($filme = $result->fetch()) {
 		      				echo ("<li>".$filme->nome."<li>");
 		      			}
       			
