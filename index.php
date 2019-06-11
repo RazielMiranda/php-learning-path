@@ -1,4 +1,19 @@
 <?php 
+
+$css="<style> 
+	body{ 
+		text-align: left; 
+		color: limegreen; 
+		background: black;
+		font: Consolas;
+	}
+
+	hr{
+		color: white;
+	}
+	</style>";
+echo $css;
+
 //My php intro
 
 
@@ -6,7 +21,7 @@ $text = "Outputs words";
 $y = 2;
 $x = 22;
 
-print "<h1>echo vs print</h1>";
+print "<h1>Echo vs Print</h1>";
 
 echo $x / $y;
 echo ($x / $y);
@@ -46,9 +61,6 @@ echo str_replace("you need to update  ","changed  ","Hello missed you need to up
 $linkStringReference = 'https://www.w3schools.com/php7/php7_ref_string.asp';
 echo "<h3> All function reference >> $linkStringReference </h3>";
 echo "<hr>";
-echo "<br>";
-
-echo '<hr>';
 
 Class Car{
 	function NewCar(){
@@ -57,7 +69,8 @@ Class Car{
 }
 
 $Veloster = new Car();
-echo "<h3> IF statement and Loops: </h3>";
+
+echo "<h1> Conditional statements and Loops</h1>";
 $Iftest = 12;
 
 	if ($Iftest % 2 == 0){
@@ -89,7 +102,8 @@ foreach ($ForEachTest as $key) {
 	echo $key;
 }
 
-echo "<h3>Arrays Prints: </h3>";
+echo "<hr>";
+echo "<h1>Arrays Prints</h1>";
 
 $ArrayKey = ["A"=>"Cheese","B"=>"Beer", "C"=>"Weekend"];
 $ArrayNormal = array(1,2,3,4,5,6);
@@ -98,6 +112,5 @@ print_r($ArrayKey);
 foreach ($ArrayNormal as $key) {
 	echo $key;
 }
-
 
 ?>
