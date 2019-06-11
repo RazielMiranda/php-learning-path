@@ -57,7 +57,7 @@ Class Car{
 }
 
 $Veloster = new Car();
-
+echo "<h3> IF statement and Loops: </h3>";
 $Iftest = 12;
 
 	if ($Iftest % 2 == 0){
@@ -65,5 +65,30 @@ $Iftest = 12;
 	}else{
 		echo "Not Pair";
 	}
+
+for ($i = 0; $i < 10; $i++){
+	echo '<br>for = '.$i;
+}
+
+$WhileTest = 0;
+while ($WhileTest < 10) {
+	$WhileTest++;
+	echo '<br> While = '.$WhileTest;
+}
+
+$DoWhileTest = 0;
+do{
+
+	$DoWhileTest++;
+	echo '<br> Do While = '.$DoWhileTest;
+
+}while ($DoWhileTest < 10);
+
+$ForEachTest = ['<br>Name: Raziel Miranda', '<br>CPF: 454.977.958-82'];
+
+foreach ($ForEachTest as $key) {
+	echo $key;
+}
+
 
 ?>
