@@ -47,4 +47,23 @@ $linkStringReference = 'https://www.w3schools.com/php7/php7_ref_string.asp';
 echo "<h3> All function reference >> $linkStringReference </h3>";
 echo "<hr>";
 echo "<br>";
+
+echo '<hr>';
+
+Class Car{
+	function NewCar(){
+		echo $this->model='WolksVagem';
+	}
+}
+
+$Veloster = new Car();
+
+$Iftest = 12;
+
+	if ($Iftest % 2 == 0){
+		echo "Pair Number";
+	}else{
+		echo "Not Pair";
+	}
+
 ?>
