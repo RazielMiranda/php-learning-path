@@ -85,8 +85,17 @@ do{
 }while ($DoWhileTest < 10);
 
 $ForEachTest = ['<br>Name: Raziel Miranda', '<br>CPF: 454.977.958-82'];
-
 foreach ($ForEachTest as $key) {
+	echo $key;
+}
+
+echo "<h3>Arrays Prints: </h3>";
+
+$ArrayKey = ["A"=>"Cheese","B"=>"Beer", "C"=>"Weekend"];
+$ArrayNormal = array(1,2,3,4,5,6);
+
+print_r($ArrayKey);
+foreach ($ArrayNormal as $key) {
 	echo $key;
 }
 
