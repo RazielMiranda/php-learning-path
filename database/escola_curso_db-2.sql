@@ -13,34 +13,6 @@ CREATE TABLE Alunos (
 		CONSTRAINT PK_NOTAS PRIMARY KEY (ID_NOTAS)
   );
 
-ALTER TABLE alunos
-	ADD COLUMN `data_nascimento` DATE NOT NULL AFTER `nome`,
-	ADD COLUMN `endereco` VARCHAR(255) NOT NULL AFTER `data_nascimento`,
-	ADD COLUMN `cidade` VARCHAR(100) NOT NULL AFTER `endereco`,
-	ADD COLUMN `estado` VARCHAR(2) NOT NULL AFTER `cidade`,
-	ADD COLUMN `cpf` VARCHAR(11) NOT NULL  AFTER `estado`
-;
-
-ALTER TABLE cursos
-	ADD COLUMN `nome` VARCHAR(120) NOT NULL AFTER `id_alunos`
-;
-    
-    
-CREATE TABLE Alunos (
-	id_alunos INT NOT NULL AUTO_INCREMENT,
-		CONSTRAINT pk_aluno PRIMARY KEY (id_alunos)
-  );
-  
-  CREATE TABLE Cursos(
-	id_cursos INT NOT NULL AUTO_INCREMENT,
-		CONSTRAINT pk_curso PRIMARY KEY (id_cursos)
-  );
-  
-  CREATE TABLE Notas(
-	ID_NOTAS INT NOT NULL AUTO_INCREMENT,
-		CONSTRAINT PK_NOTAS PRIMARY KEY (ID_NOTAS)
-  );
-
 ALTER TABLE alunos 
 	ADD COLUMN `nome` VARCHAR(100) NOT NULL AFTER `id_alunos`,
 	ADD COLUMN `data_nascimento` DATE NOT NULL AFTER `nome`,
@@ -118,3 +90,5 @@ select *
 from alunos 
 where data_nascimento <= '1999-01-01';
 
+SELECT * FROM `aluno` WHERE nome like '%Miranda%' 
+https://demo.phpmyadmin.net/master-config/tbl_sql.php?db=rz_database&table=aluno
