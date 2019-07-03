@@ -18,70 +18,130 @@ if ($conexao) {
 
 
 
-echo("<H1>CRIANDO TABELA COM PHP</H1>");
-#Tabela cursos (nome_curso, carga_horaria)
+// echo("<H1>CRIANDO TABELA COM PHP</H1>");
+// #Tabela cursos (nome_curso, carga_horaria)
 
-$query = "
+// $query = "
 
-CREATE TABLE CURSOS(
-	ID_CURSOS INT(3) NOT NULL AUTO_INCREMENT,
-	NOME_CURSOS VARCHAR(120) NOT NULL,
-	CARGA_HORARIA INT(2) NOT NULL,
-		CONSTRAINT PK_CURSOS PRIMARY KEY(ID_CURSOS)
-);
+// CREATE TABLE CURSOS(
+// 	ID_CURSOS INT(3) NOT NULL AUTO_INCREMENT,
+// 	NOME_CURSOS VARCHAR(120) NOT NULL,
+// 	CARGA_HORARIA INT(2) NOT NULL,
+// 		CONSTRAINT PK_CURSOS PRIMARY KEY(ID_CURSOS)
+// );
 
-";
+// ";
 
-$executar = mysqli_query($conexao,$query);
+// $executar = mysqli_query($conexao,$query);
 
 
-$query = "
+// $query = "
 
-CREATE TABLE ALUNOS(
-	ID_ALUNOS INT(3) NOT NULL AUTO_INCREMENT,
-	NOME_ALUNOS VARCHAR(255) NOT NULL,
-	DATA_NASCIMENTO VARCHAR(8) NOT NULL,
-		CONSTRAINT PK_ALUNOS PRIMARY KEY(ID_ALUNOS)
-	);
-";
+// CREATE TABLE ALUNOS(
+// 	ID_ALUNOS INT(3) NOT NULL AUTO_INCREMENT,
+// 	NOME_ALUNOS VARCHAR(255) NOT NULL,
+// 	DATA_NASCIMENTO VARCHAR(8) NOT NULL,
+// 		CONSTRAINT PK_ALUNOS PRIMARY KEY(ID_ALUNOS)
+// 	);
+// ";
 
-$executar = mysqli_query($conexao,$query);
+// $executar = mysqli_query($conexao,$query);
 
-$query = "
+// $query = "
 
-CREATE TABLE ALUNOS_CURSOS(
-	ID_ALUNOS_CURSOS INT(3) NOT NULL AUTO_INCREMENT,
-	ID_CURSOS INT(3) NOT NULL,
-	ID_ALUNOS INT(3) NOT NULL,
-		CONSTRAINT PK_ALUNOS_CURSOS PRIMARY KEY(ID_ALUNOS_CURSOS)
-	);
-";
+// CREATE TABLE ALUNOS_CURSOS(
+// 	ID_ALUNOS_CURSOS INT(3) NOT NULL AUTO_INCREMENT,
+// 	ID_CURSOS INT(3) NOT NULL,
+// 	ID_ALUNOS INT(3) NOT NULL,
+// 		CONSTRAINT PK_ALUNOS_CURSOS PRIMARY KEY(ID_ALUNOS_CURSOS)
+// 	);
+// ";
 
-$executar = mysqli_query($conexao,$query);
+// $executar = mysqli_query($conexao,$query);
 
-if ($executar) {
-	echo "Tabelas criadas";
-}else{
-	echo "Erro ao criar tabelas<br>";
-}
+// if ($executar) {
+// 	echo "Tabelas criadas";
+// }else{
+// 	echo "Erro ao criar tabelas<br>";
+// }
 
-#GERALMENTE NÃO SE USA O PHP PARA CRIAR TABELAS
+// #GERALMENTE NÃO SE USA O PHP PARA CRIAR TABELAS
 
-#INSERIR DADOS NAS TABELAS
-$inserirDados = "
+// #INSERIR DADOS NAS TABELAS
+// $inserirDados = "
 
-	INSERT INTO ALUNOS(ID_ALUNOS,NOME_ALUNOS,DATA_NASCIMENTO)
-		VALUES(DEFAULT,'NELIA MIRANDA','01012000');
+// 	INSERT INTO ALUNOS(ID_ALUNOS,NOME_ALUNOS,DATA_NASCIMENTO)
+// 		VALUES(DEFAULT,'NELIA MIRANDA','01012000');
 
-";
+// ";
 
-$executarInsert = mysqli_query($conexao,$inserirDados);
+// $executarInsert = mysqli_query($conexao,$inserirDados);
 
-if ($executarInsert) {
-	echo "Dado inserido com sucesso!<br>";
-}else{
-	echo "Erro ao inserir dados!";
-}
+// if ($executarInsert) {
+// 	echo "Dado inserido com sucesso!<br>";
+// }else{
+// 	echo "Erro ao inserir dados!";
+// }
+
+// $selectDados = "
+
+// SELECT * FROM ALUNOS;
+
+// ";
+
+// $executar = mysqli_query($conexao,$selectDados);
+
+
+
+// $inserirDados = "
+
+// INSERT INTO CURSOS(NOME_CURSOS,CARGA_HORARIA)
+// VALUES('PHP E MYSQL', 10);
+
+
+// ";
+
+
+
+// $executarInsert = mysqli_query($conexao, $inserirDados);
+
+// if ($executarInsert) {
+// 	print("Insert do curso ok");
+// }else{
+// 	print("erros no curso");
+// }
+
+
+// $inserirDados = "
+
+// INSERT INTO ALUNOS_CURSOS(ID_CURSOS,ID_ALUNOS)
+// VALUES (1,3);
+
+// ";
+
+// $executarInsert = mysqli_query($conexao, $inserirDados);
+
+
+// if ($executarInsert) {
+// 	print("Insert do ALUNOS_CURSOS ok");
+// }else{
+// 	print("erros no ALUNOS_CURSOS");
+// }
+
+// mysqli_query($conexao,"DELETE FROM ALUNOS WHERE ID_ALUNOS = 2;");
+
+// if ($conexao) {
+// 	echo "<br>dado deletado!";
+// }
+
+// mysqli_query($conexao,"UPDATE ALUNOS SET NOME_ALUNOS = 'MARCOS ROBERTO'  WHERE ID_ALUNOS = 10;");
+
+// if ($conexao) {
+// 	echo "<br>dado ATUALIZADO!";
+// }
+
+
+
 
 $selectDados = "
 
@@ -89,63 +149,42 @@ SELECT * FROM ALUNOS;
 
 ";
 
-$executar = mysqli_query($conexao,$selectDados);
 
 
-
-$inserirDados = "
-
-INSERT INTO CURSOS(NOME_CURSOS,CARGA_HORARIA)
-VALUES('PHP E MYSQL', 10);
-
-
+echo "<table border=1>
+<tr>
+	<th>
+		ID
+	</th>
+	<th>
+		Nome
+	</th>
+	<th>
+		Data Nascimento
+	</th>
+</tr>
 ";
 
 
+$consulta = mysqli_query($conexao,$selectDados);
 
-$executarInsert = mysqli_query($conexao, $inserirDados);
 
-if ($executarInsert) {
-	print("Insert do curso ok");
-}else{
-	print("erros no curso");
+while ($linha = mysqli_fetch_array($consulta)) {
+	echo "<tr>";
+	echo "<td>";
+	echo $linha['ID_ALUNOS'];
+	echo "</td>";
+	echo "<td>";
+	echo $linha['NOME_ALUNOS'];
+	echo "</td>";
+	echo "<td>";
+	echo $linha['DATA_NASCIMENTO'];
+	echo "</td>";
+	echo "</tr>";
 }
 
+echo "</table>";
 
-$inserirDados = "
-
-INSERT INTO ALUNOS_CURSOS(ID_CURSOS,ID_ALUNOS)
-VALUES (1,3);
-
-";
-
-$executarInsert = mysqli_query($conexao, $inserirDados);
-
-
-if ($executarInsert) {
-	print("Insert do ALUNOS_CURSOS ok");
-}else{
-	print("erros no ALUNOS_CURSOS");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+mysqli_query($conexao, "ALTER TABLE ALUNOS CHANGE DATA_NASCIMENTO DATA_NASCIMENTO VARCHAR(120) NOT NULL;");
 
 ?>
