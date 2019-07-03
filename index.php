@@ -62,10 +62,90 @@ $executar = mysqli_query($conexao,$query);
 if ($executar) {
 	echo "Tabelas criadas";
 }else{
-	echo "Erro ao criar tabelas";
+	echo "Erro ao criar tabelas<br>";
 }
 
 #GERALMENTE NÃO SE USA O PHP PARA CRIAR TABELAS
+
+#INSERIR DADOS NAS TABELAS
+$inserirDados = "
+
+	INSERT INTO ALUNOS(ID_ALUNOS,NOME_ALUNOS,DATA_NASCIMENTO)
+		VALUES(DEFAULT,'NELIA MIRANDA','01012000');
+
+";
+
+$executarInsert = mysqli_query($conexao,$inserirDados);
+
+if ($executarInsert) {
+	echo "Dado inserido com sucesso!<br>";
+}else{
+	echo "Erro ao inserir dados!";
+}
+
+$selectDados = "
+
+SELECT * FROM ALUNOS;
+
+";
+
+$executar = mysqli_query($conexao,$selectDados);
+
+
+
+$inserirDados = "
+
+INSERT INTO CURSOS(NOME_CURSOS,CARGA_HORARIA)
+VALUES('PHP E MYSQL', 10);
+
+
+";
+
+
+
+$executarInsert = mysqli_query($conexao, $inserirDados);
+
+if ($executarInsert) {
+	print("Insert do curso ok");
+}else{
+	print("erros no curso");
+}
+
+
+$inserirDados = "
+
+INSERT INTO ALUNOS_CURSOS(ID_CURSOS,ID_ALUNOS)
+VALUES (1,3);
+
+";
+
+$executarInsert = mysqli_query($conexao, $inserirDados);
+
+
+if ($executarInsert) {
+	print("Insert do ALUNOS_CURSOS ok");
+}else{
+	print("erros no ALUNOS_CURSOS");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>
