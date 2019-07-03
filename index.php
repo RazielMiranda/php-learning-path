@@ -162,6 +162,7 @@ echo "<table border=1>
 	<th>
 		Data Nascimento
 	</th>
+
 </tr>
 ";
 
@@ -183,8 +184,32 @@ while ($linha = mysqli_fetch_array($consulta)) {
 	echo "</tr>";
 }
 
-echo "</table>";
 
-mysqli_query($conexao, "ALTER TABLE ALUNOS CHANGE DATA_NASCIMENTO DATA_NASCIMENTO VARCHAR(120) NOT NULL;");
+// mysqli_query($conexao, "ALTER TABLE ALUNOS CHANGE DATA_NASCIMENTO DATA_NASCIMENTO VARCHAR(120) NOT NULL;");
+#mysqli_query($conexao,"UPDATE ALUNOS SET DATA_NASCIMENTO = '00-00-0000';");
+
+$consultaJoin = mysqli_query($conexao, "
+
+	SELECT ALUNOS.NOME_ALUNOS, CURSOS.NOME_CURSOS
+	FROM ALUNOS_CURSOS, ALUNOS, CURSOS 
+	WHERE ALUNOS_CURSOS.ID_ALUNOS = ALUNOS.ID_ALUNOS and ALUNOS_CURSOS.ID_CURSOS = CURSOS.ID_CURSOS;
+
+");
+
+
+while ($linhaCurso = mysqli_fetch_array($consultaJoin)) {
+	echo "<th>NOME CURSO</th>;";
+	echo "<tr>";
+	echo "<td>";
+	echo $linhaCurso['NOME_ALUNOS'];
+	echo "</td>";
+	echo "<td>";
+	echo $linhaCurso['NOME_CURSOS'];
+	echo "</td>";
+	echo "</tr>";
+}
+
+
+echo "</table>";
 
 ?>
