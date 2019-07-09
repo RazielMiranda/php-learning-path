@@ -8,14 +8,14 @@
 <body>
 
 <header class="container">
-	<img src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral-light.svg" title="crud_logo" alt="crud_logo">
+	<img src="img/crud_logo.png" width="">
+	<div id="menu">
+		<a href="#">Cursos</a>
+		<a href="#">Alunos</a>
+		<a href="#">Matriculas</a>
+	</div>
 </header>
-
-<div id="conteudo">
+<div class="container" id="conteudo">
 	
-
-
-
-
 
 
