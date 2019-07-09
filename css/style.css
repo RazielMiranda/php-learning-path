@@ -1,0 +1,22 @@
+body{
+	font-family: helvetica, arial, sans-serif;
+	font-size: 20px;
+	color: black;
+}
+
+header{
+	height: 80px;
+	background-color: black;
+}
+
+footer{
+	background-color: whitesmoke;
+}
+
+.container{
+	margin: 0 auto; width: 960px;
+}
+
+#conteudo{
+	background-color: red;
+}
