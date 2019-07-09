@@ -8,11 +8,12 @@
 <body>
 
 <header class="container">
-	<img src="img/crud_logo.png" width="">
+	<a href="index.php">	<img src="img/crud_logo.png" width="">
+</a>
 	<div id="menu">
-		<a href="#">Cursos</a>
-		<a href="#">Alunos</a>
-		<a href="#">Matriculas</a>
+		<a href="?pagina=cursos">Cursos</a>
+		<a href="?pagina=alunos">Alunos</a>
+		<a href="?pagina=matriculas">Matriculas</a>
 	</div>
 </header>
 <div class="container" id="conteudo">
