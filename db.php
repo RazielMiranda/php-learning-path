@@ -14,7 +14,11 @@ $consulta_cursos = mysqli_query($conexao, $query);
 $query = "SELECT DATA_NASCIMENTO, NOME_ALUNOS FROM ALUNOS";
 $consulta_alunos = mysqli_query($conexao,$query);
 
-$query = "SELECT ID_ALUNOS, ID_CURSOS FROM ALUNOS_CURSOS";
+$query = "SELECT ALUNOS.NOME_ALUNOS, CURSOS.NOME_CURSOS 
+FROM ALUNOS, CURSOS, ALUNOS_CURSOS
+WHERE ALUNOS_CURSOS.ID_ALUNOS = ALUNOS.ID_ALUNOS 
+AND ALUNOS_CURSOS.ID_CURSO = CURSOS.ID_CURSO";
+
 $consulta_matriculas = mysqli_query($conexao,$query);
 
 
