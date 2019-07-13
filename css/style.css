@@ -31,16 +31,17 @@ footer{
 #menu{
 	float: right;
 	text-decoration: none;
-	margin-top: 10px;
-	padding-right: 10px;
+	margin-top: 2.5rem;
+	padding-right: 10rem;
 }
 
 #menu a{
 	text-decoration: none;
+	padding: 2rem;
 
 }
 
 #menu a:hover{
 	background-color: white;
-
+	border-radius: 100px;
 }

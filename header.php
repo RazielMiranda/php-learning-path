@@ -7,8 +7,8 @@
 </head>
 <body>
 
-<header class="container">
-	<a href="index.php">	<img src="img/crud_logo.png" width="">
+<header class="container" >
+	<a href="index.php">	<img style="margin: 1rem;" src="img/crud_logo.png" width="75" height="75">
 </a>
 	<div id="menu">
 		<a href="?pagina=cursos">Cursos</a>
