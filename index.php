@@ -4,7 +4,7 @@ include 'db.php';
 
 include 'header.php';
 
-$pagina = $_GET['pagina'];
+@$pagina = $_GET['pagina'];
 
 if ($pagina == 'cursos') {
 	include 'views/cursos.php';
@@ -16,6 +16,8 @@ if ($pagina == 'cursos') {
 	include 'views/inserir_novo_curso.php';
 }else if($pagina == 'inserir_novo_aluno'){
 	include 'views/inserir_novo_aluno.php';
+}else if($pagina == 'inserir_matriculas'){
+	include 'views/inserir_matriculas.php';
 }else{
 	include 'views/home.php';
 }

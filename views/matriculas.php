@@ -1,3 +1,4 @@
+<a href="?pagina=inserir_matriculas">inserir matricula</a>
 
 <table>
 	<tr>
