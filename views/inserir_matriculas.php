@@ -1,5 +1,4 @@
 <h1>inserir matriculas</h1>
-<h3>Selecione o aluno:</h3>
 
 <form method="post" action="processa_matricula.php">
 
@@ -11,12 +10,6 @@
 	?>
 	</select>
 
-
-
-
-
-
-	<h3>Selecione o curso:</h3>
 
 	<select name="escolhe_curso">
 	<?php
