@@ -1,3 +1,4 @@
+<a href="?pagina=inserir_novo_aluno">inserir novo aluno</a>
 <table>
 	<tr>
 		<td>NOME ALUNOS</td>

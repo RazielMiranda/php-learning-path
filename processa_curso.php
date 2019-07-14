@@ -1,9 +1,7 @@
 <?php  
 
-$servidor='localhost';
-$user = 'root';
-$senha = 'database@LOCAL';
-$db = 'aula_php';
+include 'db.php';
+
 
 $conexao = mysqli_connect($servidor,$user,$senha,$db);
 
