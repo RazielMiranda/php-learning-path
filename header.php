@@ -14,6 +14,7 @@
 		<a href="?pagina=cursos">Cursos</a>
 		<a href="?pagina=alunos">Alunos</a>
 		<a href="?pagina=matriculas">Matriculas</a>
+			
 	</div>
 </header>
 <div class="container" id="conteudo">
