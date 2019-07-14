@@ -22,11 +22,3 @@ AND ALUNOS_CURSOS.ID_CURSO = CURSOS.ID_CURSO";
 $consulta_matriculas = mysqli_query($conexao,$query);
 
 
-
-
-
-
-
-
-
-
