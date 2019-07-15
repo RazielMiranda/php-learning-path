@@ -7,8 +7,11 @@ $id_curso = $_POST['escolhe_curso'];
 
 $query = "
 
-INSERT INTO ALUNOS_CURSOS(ID_ALUNOS, ID_CURSOS)
-VALUES ($id_aluno,$id_curso)
+
+
+INSERT INTO `alunos_cursos` (`ID_ALUNOS_CURSOS`, `ID_CURSOS`, `ID_ALUNOS`) 
+
+VALUES (NULL, $id_curso, $id_aluno)
 
 ";
 

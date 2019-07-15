@@ -1,5 +1,7 @@
-<a href="?pagina=inserir_matriculas">inserir matricula</a>
+<div class="container">
+	<a href="?pagina=inserir_matriculas">inserir matricula</a>
 
+</div>
 <table>
 	<tr>
 		<th>
