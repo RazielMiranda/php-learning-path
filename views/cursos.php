@@ -10,13 +10,16 @@
 	while ($linha = mysqli_fetch_array($consulta_cursos)) {
 		echo "<tr><td>".$linha['NOME_CURSOS'].'</td>';
 		echo "<td>".$linha['CARGA_HORARIA'].'</td>';
-	}
-
+	
 	?>
 
-	<td><a href="deleta_curso.php?id=<?php echo $linha['ID_CURSO']; ?>">Deletar</a></td></tr>
+	<td><a href="deleta_curso.php?ID_CURSOS=<?php echo $linha['ID_CURSOS']; ?>">Deletar</a></td></tr>
+
 
 	<?php 
+		
+		}
+	 
 	 ?>
 
 </table>

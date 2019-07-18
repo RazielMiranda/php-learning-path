@@ -2,12 +2,14 @@
 
 include 'db.php';
 
-$id_curso = echo $_GET['ID_CURSO'];
-
-$query = "DELETE FROM CURSOS WHERE ID = $id_curso";
+$ID_CURSOS = $_GET['ID_CURSOS'];
 
 
-mysqli_query($conexao ,$query)
+$query = "DELETE FROM CURSOS WHERE ID_CURSOS = $ID_CURSOS";
+
+
+mysqli_query($conexao ,$query);
+
 
 header('location:index.php?pagina=cursos');
 
