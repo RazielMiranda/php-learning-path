@@ -1,13 +1,14 @@
 body{
-	font-family: helvetica, arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
 	font-size: 20px;
+	background-color: white;
+
 }
 
 header{
 	height: 120px;
 	background-color: whitesmoke;
 	color: black;
-	font-weight: bold;
 }
 
 

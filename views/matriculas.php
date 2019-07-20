@@ -1,26 +1,31 @@
-<div class="container">
+<div>
 	<a href="?pagina=inserir_matriculas">inserir matricula</a>
 
 </div>
-<table>
-	<tr>
-		<th>
-			<td>ALUNO MATRICULADO</td>
-		</th>
-	</tr>
+<table id="matriculas">
+	<thead>
+		<tr>
+			<th>
+				<td>ALUNO MATRICULADO</td>
+			</th>
+		</tr>
+	</thead>
 
-	<tr>
-		<th>
-			<td>CURSO MATRICULADO</td>
-		</th>
-	</tr>
+	<tbody>
+		<tr>
+			<th>
+				<td>CURSO MATRICULADO</td>
+			</th>
+		</tr>
 
-	<?php 
+		<?php 
 
-	while ($linha = mysqli_fetch_array($consulta_matriculas)) {
-		echo "<tr><td>".$linha['NOME_ALUNOS'].'</td>';
-		echo "<td>".$linha['NOME_CURSOS'].'</td></tr>';
-	}
+		while ($linha = mysqli_fetch_array($consulta_matriculas)) {
+			echo "<tr><td>".$linha['NOME_ALUNOS'].'</td>';
+			echo "<td>".$linha['NOME_CURSOS'].'</td></tr>';
+		}
 
-	?>
+		?>
+	</tbody>
+
 </table>
