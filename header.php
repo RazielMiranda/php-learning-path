@@ -35,6 +35,15 @@
       <li class="nav-item">
         <a class="nav-link" href="?pagina=matriculas" tabindex="-1" aria-disabled="true">Matriculas</a>
       </li>
+
+      <?php if(isset($_SESSION['usuario'])) { ?>
+
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php" tabindex="-1" aria-disabled="true"><?php echo $_SESSION['usuario']; ?> (Sair) </a>
+      </li>
+     
+     <?php } ?>
+
     </ul>
   </div>
 

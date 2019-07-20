@@ -1,15 +1,22 @@
 <?php 
+session_start();
 
 include 'db.php';
 
 include 'header.php';
 
-
-if (isset($_GET['pagina'])) {
-	$pagina = $_GET['pagina'];
+if(isset($_SESSION['login'])){
+	if (isset($_GET['pagina'])) {
+		$pagina = $_GET['pagina'];
+	}else{
+		$pagina = 'cursos';
+	}
 }else{
 	$pagina = 'home';
 }
+
+
+
 
 
 switch ($pagina) {
