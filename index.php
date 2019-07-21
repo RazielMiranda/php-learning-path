@@ -1,8 +1,11 @@
 <?php 
 
 require "Pessoa.php";
+require "Programador.php";
 
-$uma_pessoa = new Pessoa("Raziel");
-echo $uma_pessoa->getNome();
+$programador = new Programador("Raziel","PHP 7");
+echo $programador->getNome();
+#Herança
 
-?>
+#Contante
+echo $programador::ESPECIE;
