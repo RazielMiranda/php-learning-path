@@ -6,7 +6,7 @@
 
   <a class="navbar-brand" href="index.php">
     <img src="img/crud_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    C.R.U.D - SANDBOX | Raziel M. Rodrigues
+    <a class="text-decoration nav-link" style="color: white;"href="https://www.linkedin.com/in/raziel-rodrigues-2b32b5140/">C.R.U.D - SANDBOX | Raziel M. Rodrigues</a>
   </a>
 </nav>
 

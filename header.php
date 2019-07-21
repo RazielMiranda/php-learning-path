@@ -46,7 +46,12 @@
 
     </ul>
   </div>
-
+      <li class=" nav nav-item">
+        <form action="login.php" class="form" method="post">
+            <input  type="text" name="usuario" placeholder="Nome do usuario">
+            <input  type="password" name="senha" placeholder="Digite a senha">
+            <input type="submit" value="entrar" class="btn btn-success btn-md">
+        </form>
+      </li>
 </nav>
-
 <div>
