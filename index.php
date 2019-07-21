@@ -1,50 +1,75 @@
 <?php 
-//My php intro
+session_start();
+
+include 'db.php';
+
+include 'header.php';
+
+if(isset($_SESSION['login'])){
+	if (isset($_GET['pagina'])) {
+		$pagina = $_GET['pagina'];
+	}else{
+		$pagina = 'cursos';
+	}
+}else{
+	$pagina = 'home';
+}
 
 
-$text = "Outputs words";
-$y = 2;
-$x = 22;
 
-print "<h1>echo vs print</h1>";
 
-echo $x / $y;
-echo ($x / $y);
-print $x / $y;
-print ($x / $y);
 
-print("<p>more or less different ".$text);
+switch ($pagina) {
+	case $pagina == 'cursos':
+		include 'views/cursos.php';
+		break;
 
-echo "<hr>";
+	case $pagina == 'alunos':
+		include 'views/alunos.php';
+		break;
 
-echo '<h1>Studies about type of variables</h1>';
+	case $pagina == 'matriculas':
+		include 'views/matriculas.php';
+		break;
 
-$intVal = 1248765342148;
-$floatVal = 1232.764;
-$falseVal = false;
-$trueVal = true;
-$arrayVal = array('PHP',7,'is very', "COOL!");
+	case $pagina == 'inserir_novo_curso':
+		include 'views/inserir_novo_curso.php';
+		break;
 
-$notNullVal = 'hey i am not null ';
-echo $notNullVal;
-$notNullVal = null;
-echo 'Now is null '.$notNullVal;
+	case $pagina == 'inserir_novo_aluno':
+	include 'views/inserir_novo_aluno.php';
+		break;
 
-var_dump($intVal);
-var_dump($floatVal);
-var_dump($falseVal, $trueVal);
-var_dump($arrayVal);
+	case $pagina == 'inserir_matriculas':
+		include 'views/inserir_matriculas.php';
+		break;
 
-echo '<hr>';
+	default:
+		include 'views/home.php';
+		break;
+}
 
-echo '<h1>String PHP functions </h1>';
+# Chamando views com if
+// if ($pagina == 'cursos') {
+// 	include 'views/cursos.php';
+// }else if ($pagina == 'alunos') {
+// 	include 'views/alunos.php';
+// }else if ($pagina == 'matriculas') {
+// 	include 'views/matriculas.php';
+// }else if($pagina == 'inserir_novo_curso'){
+// 	include 'views/inserir_novo_curso.php';
+// }else if($pagina == 'inserir_novo_aluno'){
+// 	include 'views/inserir_novo_aluno.php';
+// }else if($pagina == 'inserir_matriculas'){
+// 	include 'views/inserir_matriculas.php';
+// }else{
+// 	include 'views/home.php';
+// }
 
-echo 'Hello world, size of string = '.strlen('Hello world  ').'Number of word = '.str_word_count('Hello world   ').strrev(' Hello world  ').strpos("Hello world  ", "world  ");
 
-echo str_replace("you need to update  ","changed  ","Hello missed you need to update  ");
 
-$linkStringReference = 'https://www.w3schools.com/php7/php7_ref_string.asp';
-echo "<h3> All function reference >> $linkStringReference </h3>";
-echo "<hr>";
-echo "<br>";
+
+
+include 'footer.php';
+
 ?>

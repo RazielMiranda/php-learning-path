@@ -1,1 +1,0 @@
-#PHP Case Sensitivity only in variable, the natives method's isn't case sensitive.
