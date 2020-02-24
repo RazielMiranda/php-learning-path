@@ -10,17 +10,36 @@
     <title>PHP FORMS</title>
   </head>
   <body>
-  <main class="container">
-    <nav class="navbar navbar-light bg-light" style="background-color: #8993be;">
+
+    <nav class="navbar navbar-light" style="background-color: #8993be;">
       <a class="navbar-brand" href="index.php">
-        <img src="images/php-logo.svg" width="30" height="30" class="d-inline-block align-top">
+        <img src="images/php-logo.svg" width="65" height="65" class="d-inline-block align-top">
         PHP FORMS
       </a>
     </nav>
 
+  <main class="container">
+    <section>
+      <br>
       <h1>Inscrição de competidores:</h1>
+      <br>
 
+      <form action="script.php" method="post">
+          <div class="form-row">
+            <div class="col">
+              <input name="primeiroNome" type="text" class="form-control" placeholder="Primeiro nome">
+            </div>
+            <div class="col">
+              <input name="segundoNome" type="text" class="form-control" placeholder="Ultimo nome">
+            </div>
+            <div class="col">
+              <input name="idade" type="text" class="form-control" placeholder="Sua idade">
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+          </div>
+      </form>
 
+    </section>
 
 
 

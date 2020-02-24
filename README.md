@@ -15,3 +15,4 @@ Entender como funciona os formulários, o metodo http e seus verbos com controle
 2. O METODO POST:
 	$POST[] é responsável por enviar informações para serem processadas e com o POST salvamos informações.
 
+Como a gente utiliza os metodos? basta criar um formulário e dentro do atributo method do HTML escolher se quer POST ou GET, outra coisa e que é necessário [é mostrar a URL do lugar onde esses dados vão ser processados. Para mostrar onde é o local correto basta colocar o caminho do arquivo/URL que deseja que os dados sejam enviados dentro do atributo action do HTML. e claro ter um botão com o type de submit.
