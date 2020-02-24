@@ -1,7 +1,17 @@
-# Minha trilha de apredizado da linguagem PHP
-## Desde a introdução até a criação de um C.R.U.D usando a linguagem para o back-end banco de dados MySQL e bootstrap pro front.
+# Formulários PHP, Protocolos e sessões e validações:
 
-LINK DE ACESSO AO PROJETO: https://php-learning-path.000webhostapp.com/
+Entender como funciona os formulários, o metodo http e seus verbos com controle de sessão e validação dos dados.
 
-LINK DE VÍDEO DE FUNCIONAMENTO: https://www.loom.com/share/453108b050cf4024988e91c1f5b8e1c1
+Aula 1:
 
+* HTTP (HIPERTEXT TRANSFER PROTOCOL)
+* REQUEST E RESPONDE (REQUISIÇÃO NO SERVIDOR, RESPONSE SÃO AS RESPOSTAS AO CLIENTE SE DEU ERRO SE DEU CERTO ETC)
+* HEADERS (AONDE TRAFEGA A INFORMAÇÃO QUE VAI SER PROCESSADA NO SERVIDOR)
+
+1. O METODO GET:
+
+$GET[] SÃO DADOS QUE SÃO VISIVEIS NA URL E SÃO TRAFEGADOS PELO HEADER DA REQUISIÇÃO
+
+2. O METODO POST:
+
+$POST[] SÃO DADOSQ QUE NÃO SÃO VISIVEIS NA URL E SÃO CARREGADOS NO CORPO DA REQUISIÇÃO
