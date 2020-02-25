@@ -13,8 +13,7 @@
 
     <nav class="navbar navbar-light" style="background-color: #8993be;">
       <a class="navbar-brand" href="index.php">
-        <img src="images/php-logo.svg" width="65" height="65" class="d-inline-block align-top">
-        PHP FORMS
+        <img src="images/php-logo.svg" width="65" height="65" class="d-inline-block align-top"> FORMS
       </a>
     </nav>
 
@@ -26,16 +25,18 @@
 
       <form action="script.php" method="post">
           <div class="form-row">
-            <div class="col">
+            <div class="col-4">
               <input name="primeiroNome" type="text" class="form-control" placeholder="Primeiro nome">
             </div>
-            <div class="col">
+            <div class="col-4">
               <input name="segundoNome" type="text" class="form-control" placeholder="Ultimo nome">
             </div>
-            <div class="col">
+            <div class="col-2">
               <input name="idade" type="text" class="form-control" placeholder="Sua idade">
             </div>
-            <button type="submit" class="btn btn-success">Enviar</button>
+            <div class="col-2">
+              <button type="submit" class="btn btn-success">Enviar</button>
+            </div>
           </div>
       </form>
 
