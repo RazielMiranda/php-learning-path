@@ -25,6 +25,9 @@
       <br>
 
       <form action="script.php" method="post">
+        <?php 
+          $mensagemDeErro = isset($_SESSION['mensagem de erro']); ? $_SESSION['mensagem de erro'];
+        ?>
           <div class="form-row">
             <div class="col-4">
               <input name="primeiroNome" type="text" class="form-control" placeholder="Primeiro nome">

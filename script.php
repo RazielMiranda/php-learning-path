@@ -1,11 +1,11 @@
 <?php 
-
+session_start();
 $primeiroNome = $_POST['primeiroNome'];
 $segundoNome = $_POST['segundoNome'];
 $idade = $_POST['idade'];
 
 if (empty($primeiroNome)){
-	echo "Nome não pode ser vazio";
+	$_SESSION['mensagem de erro'] = 'Nome não pode ser vazio';
 	return;
 }
 
