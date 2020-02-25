@@ -21,3 +21,5 @@ Após enviar os dados, é necessário começar a se preocupar com a validação 
 
 empty($nome) = Verifica se uma variavél está vazia.
 strlen($nome) = Conta a quantidade de caracters de uma string.
+is_numeric($idade) = Verifica se a string é númerica, existem varios tipos de is_.
+!is_numeric() = Quando se tem um esclamação está negando o retorno do método.

@@ -19,6 +19,15 @@ if (strlen($primeiroNome) > 40 && strlen($primeiroNome) > 40){
 	return;
 }
 
+if (strlen($primeiroNome) > 40 && strlen($primeiroNome) > 40){
+	echo "Nome muito extenso";
+	return;
+}
+
+if (!is_numeric($idade)) {
+	echo "Digite um número";
+	return;
+}
 
 echo $primeiroNome;
 echo $segundoNome;
