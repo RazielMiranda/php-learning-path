@@ -17,9 +17,18 @@ Entender como funciona os formulários, o metodo http e seus verbos com controle
 
 Como a gente utiliza os metodos? basta criar um formulário e dentro do atributo method do HTML escolher se quer POST ou GET, outra coisa e que é necessário [é mostrar a URL do lugar onde esses dados vão ser processados. Para mostrar onde é o local correto basta colocar o caminho do arquivo/URL que deseja que os dados sejam enviados dentro do atributo action do HTML. e claro ter um botão com o type de submit.
 
+###Aula 2:
+
 Após enviar os dados, é necessário começar a se preocupar com a validação dos dados, para validadar os dados eles tem que bater com a regra de negocio e dependo dela o PHP tem diversas funções e metodos que pode auxiliar como:
 
 empty($nome) = Verifica se uma variavél está vazia.
 strlen($nome) = Conta a quantidade de caracters de uma string.
 is_numeric($idade) = Verifica se a string é númerica, existem varios tipos de is_.
 !is_numeric() = Quando se tem um esclamação está negando o retorno do método.
+
+###Aula 3:
+
+session_start() = A sessão deve ser sempre o primeiro código a ser executado.
+
+
+Array([0]=>pombo [1]=>pidgeot [2]=>flamingo [3]=>garça [4]=>morcego [5]=>pato)
