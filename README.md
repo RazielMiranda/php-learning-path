@@ -30,5 +30,14 @@ is_numeric($idade) = Verifica se a string é númerica, existem varios tipos de 
 
 session_start() = A sessão deve ser sempre o primeiro código a ser executado.
 
+Um exemplo de uso de sessões são na hora de autenticar usuarios, ou seja é perfeita pra esse tipo de exemplo pois, se ele se autenticar uma vez, ele consegue ficar autenticado nas outras, outra forma de usar sessões são na hora de deixar uma mensagem continuamente. Uma sessão sempre fica aberta até o navegador fechar. Uma sessão está interligado com o HTTP. Um array número é diferente do array de sessão, a sessão é um array associativo, onde voce associa um valor a um nome.
+
+O comando header é utilizado para montar um cabeçalho do pacote HTTP. 
+
+O comando isset() serve para verificar se uma variável é existente ou se não possui valor igual a null.
+
+? seria como a execução do if se retorna true e o : seria comoo else
+
+
 
 Array([0]=>pombo [1]=>pidgeot [2]=>flamingo [3]=>garça [4]=>morcego [5]=>pato)

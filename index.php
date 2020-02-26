@@ -19,15 +19,19 @@
     </nav>
 
   <main class="container">
+
     <section>
       <br>
       <h1>Inscrição de competidores:</h1>
       <br>
-
       <form action="script.php" method="post">
-        <?php 
-          $mensagemDeErro = isset($_SESSION['mensagem de erro']); ? $_SESSION['mensagem de erro'];
+        <?php $mensagemDeErro = isset($_SESSION['mensagem de erro']) ? $_SESSION['mensagem de erro'] : '';
+        if (!empty($mensagemDeErro)) {
+          echo $mensagemDeErro;  
+        }
+
         ?>
+        <br>
           <div class="form-row">
             <div class="col-4">
               <input name="primeiroNome" type="text" class="form-control" placeholder="Primeiro nome">
@@ -43,9 +47,16 @@
             </div>
           </div>
       </form>
-
+      <br>
     </section>
 
+    <br>
+     <h3><?php $mensagemDeSucesso = isset($_SESSION['mensagem de sucesso']) ? $_SESSION['mensagem de sucesso'] : ''; 
+        if (!empty($mensagemDeSucesso)) {
+          echo $mensagemDeSucesso;  
+        }
+     ?></h3>
+    <br>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
