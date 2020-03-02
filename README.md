@@ -10,6 +10,7 @@ function validaNome(string $nome) : bool{
 
 1. Em uma função voce pode definir o tipo do retorno colocando : tipo_retorno
 2. Com a função declare('strict type = 1') voce deixa o PHP com tipagem forte
+3. Em PHP podemos declarar que um metodo pode receber string mas se ele precisar pode retornar null para isso basta adicionar o coringa ?string na frente do parametro de retorno.
 
 Função para validar data:
 
