@@ -3,13 +3,13 @@
 function validaNome(string $nome) : bool{
 
 	if (empty($primeiroNome) && empty($segundoNome)){
-		 = 'Nome não pode ser vazio, digite novamente!';
+		setMensagemErro('Nome não pode ser vazio, digite novamente!');
 		return false;
 	}else if (strlen($primeiroNome) < 3 && strlen($segundoNome) < 3){
-		$_SESSION['mensagem de erro'] = 'Nome muito pequeno!';
+		setMensagemErro('Nome muito pequeno!');
 		return false;
 	}else if (strlen($primeiroNome) > 40 && strlen($segundoNome) > 40){
-		$_SESSION['mensagem de erro'] = 'Nome muito extenso!';
+		setMensagemErro('Nome muito extenso!');
 		return false;
 
 	return true;
@@ -18,7 +18,7 @@ function validaNome(string $nome) : bool{
 function validaIdade(string $idade) : bool{
 
 	if (!is_numeric($idade)) {
-		$_SESSION['mensagem de erro'] = 'Digite um número!';
+		setMensagemErro('Digite um número!');
 		return false;
 	}
 
