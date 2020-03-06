@@ -11,6 +11,7 @@ function validaNome(string $nome) : bool{
 	}else if (strlen($primeiroNome) > 40 && strlen($segundoNome) > 40){
 		setMensagemErro('Nome muito extenso!');
 		return false;
+	}
 
 	return true;
 }
@@ -22,6 +23,6 @@ function validaIdade(string $idade) : bool{
 		return false;
 	}
 
-		$_SESSION['mensagem de sucesso'] = $primeiroNome . ' ' . $segundoNome . ' tem '. $idade . ' de idade';
-	return true;
+	setMensagemSucesso($primeiroNome . ' ' . $segundoNome . ' tem '. $idade . ' de idade');
+	return null;
 }
