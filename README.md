@@ -1,2 +1,7 @@
-# My PHP learning path based in courses, book, articles and other curious things about this powerful language.
-In this repository I will make my road to PHP.
+# Introdução ao PHP
+
+1. Entendendo o que é o PHP
+2. Como funciona a liguagem
+3. Os tipos de váriaveis
+4. Entendendo a sintaxe
+5. Declarando funções e metodos
