@@ -14,14 +14,13 @@
 
     <nav class="navbar navbar-light" style="background-color: #8993be;">
       <a class="navbar-brand" href="index.php">
-        <img src="images/php-logo.svg" width="65" height="65" class="d-inline-block align-top"> FORMS
+        <img src="images/php-logo.svg" width="65" height="65" class="d-inline-block align-top"> MY FORMS
       </a>
     </nav>
 
   <main class="container">
 
     <div>
-        <br>
          <h3>
          <?php
            $mensagemDeSucesso = getMensagemSucesso();
@@ -30,9 +29,7 @@
            }
           ?>
          </h3>
-        <br>
 
-        <br>
          <h3>
          <?php
            $mensagemDeErro = getMensagemErro();
@@ -41,12 +38,11 @@
            }
           ?>
          </h3>
-        <br>
     </div>
 
     <section>
       <br>
-      <h1>Inscrição de competidores:</h1>
+      <h1>Ficha de inscrição</h1>
       <br>
 
       <form action="script.php" method="post">
