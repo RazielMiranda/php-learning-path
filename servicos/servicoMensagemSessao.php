@@ -34,16 +34,14 @@ function getMensagemErro() : ?string{
 
 function removerMensagemErro() : void{
 
-	if (isset($_SESSION['mensagem de erro'])){
-		return unset($_SESSION['mensagem de erro']);
-	}
+	if (isset($_SESSION['mensagem de erro']))
+		unset($_SESSION['mensagem de erro']);
 	
 }
 
 function removerMensagemSucesso() : void{
 
-	if (isset($_SESSION['mensagem de sucesso'])){
-		return unset($_SESSION['mensagem de sucesso']);
-	}
-
+	if (isset($_SESSION['mensagem de sucesso']))
+		unset($_SESSION['mensagem de sucesso']);
+	
 }

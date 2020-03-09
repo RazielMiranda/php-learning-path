@@ -1,6 +1,6 @@
 <?php 
 
-function validaNome(string $nome) : bool{
+function validaNome(string $primeiroNome, string $segundoNome) : bool{
 
 	if (empty($primeiroNome) && empty($segundoNome)){
 		setMensagemErro('Nome não pode ser vazio, digite novamente!');
@@ -23,6 +23,5 @@ function validaIdade(string $idade) : bool{
 		return false;
 	}
 
-	setMensagemSucesso($primeiroNome . ' ' . $segundoNome . ' tem '. $idade . ' de idade');
-	return null;
+	return true;
 }

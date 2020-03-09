@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include 'servicos/servicoMensagemSessao.php'; ?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>PHP FORMS</title>
+    <title>MY FORMS</title>
   </head>
   <body>
 
@@ -20,18 +20,37 @@
 
   <main class="container">
 
+    <div>
+        <br>
+         <h3>
+         <?php
+           $mensagemDeSucesso = getMensagemSucesso();
+           if (!empty($mensagemDeSucesso)) {
+              echo $mensagemDeSucesso;
+           }
+          ?>
+         </h3>
+        <br>
+
+        <br>
+         <h3>
+         <?php
+           $mensagemDeErro = getMensagemErro();
+           if (!empty($mensagemDeErro)) {
+              echo $mensagemDeErro;
+           }
+          ?>
+         </h3>
+        <br>
+    </div>
+
     <section>
       <br>
       <h1>Inscrição de competidores:</h1>
       <br>
-      <form action="script.php" method="post">
-        <?php $mensagemDeErro = isset($_SESSION['mensagem de erro']) ? $_SESSION['mensagem de erro'] : '';
-        if (!empty($mensagemDeErro)) {
-          echo $mensagemDeErro;  
-        }
 
-        ?>
-        <br>
+      <form action="script.php" method="post">
+       <br>
           <div class="form-row">
             <div class="col-4">
               <input name="primeiroNome" type="text" class="form-control" placeholder="Primeiro nome">
@@ -49,14 +68,6 @@
       </form>
       <br>
     </section>
-
-    <br>
-     <h3><?php $mensagemDeSucesso = isset($_SESSION['mensagem de sucesso']) ? $_SESSION['mensagem de sucesso'] : ''; 
-        if (!empty($mensagemDeSucesso)) {
-          echo $mensagemDeSucesso;  
-        }
-     ?></h3>
-    <br>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
