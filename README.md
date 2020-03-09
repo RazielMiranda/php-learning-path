@@ -1,7 +1,7 @@
 # Funções em PHP:
 
 
-##Declarando funções:
+## Declarando funções:
 function validaNome(string $nome) : bool{
 
 	return true;
