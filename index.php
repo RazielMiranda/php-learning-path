@@ -2,9 +2,4 @@
 
 include 'ContaBancaria.class.php';
 
-
-
-
-
-
-var_dump($conta->nomeTitular);
+echo $conta->obterSaldo();
