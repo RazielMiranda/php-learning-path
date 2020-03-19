@@ -6,20 +6,32 @@
 </head>
 <body>
 <main>
-	<section>
-		<h1>Crie sua conta no banco php!</h1><hr>
-	</section>
-	<form method="post" action="script.php">
-		BANCO:<input type="text" name="banco"><br><br>
-		<br>
-		NOME TITULAR:<input type="text" name="nomeTitular"><br><br>
-		<br>
-		AGENCIA:<input type="text" name="numeroAgencia"><br><br>
-		<br>
-		CONTA:<input type="text" name="numeroConta"><br><br>
-		<br>
-		<input type="submit">
-	</form>
+<h1>Bem vindo ao banco PHP!</h1>
+<hr>
+<br>
+<?php 
+
+$conta = new ContaBancaria(
+	'Nubank',
+	'Raziel M.',
+	'9832-8',
+	'0001',
+	0
+);
+
+
+echo $conta->obterSaldo();
+
+echo $conta->depositar(300.00);
+
+echo $conta->obterSaldo();
+
+echo $conta->saque(150.00);
+
+echo $conta->obterSaldo();
+
+
+?>
 </main>
 </body>
 </html>
