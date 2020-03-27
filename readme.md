@@ -93,10 +93,101 @@ Ficando assim:
 
 	$data = new DateTime();
 	$intervalo = new DateInterval('PT5M');
+	
 	$data->add($intervalo);
 	var_dump($data);
+
 	$data->sub($intervalo);
 	var_dump($data);
+
+##Exceções em PHP
+
+Quando a aplicação apresenta um comportamento inesperado nos trabalhamos com exceções, ela intemrrompe o funcionamento do código e nós podemos coletar diversos dados com as exceções e para isso usamos a classe Exception que pode ser vista aqui:
+
+https://www.php.net/manual/pt_BR/class.exception
+
+Para lançar uma essa usamos a sua instaciação e passamos a mensagem que desejamos em seu construtor ficando assim:
+
+	throw new Exception("Error Processing Request");
+
+Sempre que se usa uma exceção o código para de funcionar e lança um fatal error quando a exceção é usada sem captura (try e catch), exceções também são usadas para evitar validações com condicionais, como no exemplo abaixo:
+
+	//A função recebe o array usuario como parametro, em seguida faz uma verificação para saber se algum dos indices desse array estão vazios, caso estejam vai lançar a exceção de campos nao preenchidos. Senão retorna verdade e continua executando o código
+
+	function validarUsuario(array $usuario)
+	{
+		if (empty($usuario['codigo']) || empty($usuario['nome']) || empty($usuario['idade'])) {
+			throw new Exception("Campos obrigatorios não foram preenchidos!");
+		}
+		return true;
+	}
+
+	//Aqui declaramos o array e não passamos o parametro nome, justamente para forçar o erro
+
+	$usuario = [
+	'codigo' => 1,
+	'nome' => '',
+	'idade' => 43,
+	];
+
+	//Chamando a função validarUsuario e passando o array usuario como parametro para a função
+
+	validarUsuario($usuario);
+
+
+###Capturando exceções com Try e Catch
+
+Como o próprio nome já diz Try vem de tentar ou seja irá tentar executar uma coisa e se der errado o catch vai pegar o motivo que fez isso dar errado então adicionamos o seguinte bloco de código no codígo de cima, buscando melhorar a sua perfomance:
+
+	
+	//Aqui o try verifica se a função retorna "true"
+
+	$status = false; //usada no finally
+
+	try{
+		validarUsuario($usuario);
+
+	//Aqui o catch pega a exceção que foi lançada e a mensagem relacionada a ela com o metodo getMessage() da mesma forma que usamos o metodo getMessage() podemos usar outros metodos dessa classe que auxiliem na hora de mostrar o porque dessa exceção, entretanto mesmo lançando a exceção o codigo continua rodando, e para que nao continue rodando é importante adicionar algum metodo de parada de codigo como o die(), return false, break etc
+
+	} catch (Exception $e) {
+		echo $e->getMessage();
+
+	//O bloco finally executa o finalmente da situação e serve para identificar o fluxo e como o mesmo está funcionando, para saber o status das exceções usamos uma variavel $status que armazena primeiramente como false, caso os erros sejam lançados, armazenamos o estado nessa variavel e através da técnica "cast" trasnformamos essa variavel em int para retornar 0 e 1 invés de false ou true, isso é muito bom para ir controlando o fluxo e verificando se esta tudo correndo bem.
+
+	}finally{
+		echo "<br><br>Status da operação = ".(int)$status;
+		die();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
