@@ -1,8 +1,8 @@
-#PHP: Orientação a objetos
+# PHP: Orientação a objetos
 
 Orientaçãoa objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
 
-##Classes, modificadores e funções
+## Classes, modificadores e funções
 
 A palavra reservada "class" no PHP cria uma classe, um objeto é uma instancia de uma classe, uma classe possui atributos e por sua vez metodos que definem o que de fato aquela classe faz e possui. Então um objeto serve para poder definir e usar os metodos que vem da classe por exemplo: Pessoa é uma classe, toda pessoa tem a propriedade nome e a função de respirar, entretanto nem toda pessoa tem o mesmo nome e nem toda pessoa respira na mesma velocidade essas "particularidades" são definidas no objeto.
 
@@ -59,7 +59,7 @@ E como fazer isso?
 Imagine o cenario de um banco, onde estamos trabalhando com saldo, quais são as formas de alterar o saldo de uma conta? ou com deposito ou com saque, então para isso se deve criar dois metodos que manipulem essa propriedade.
 
 
-##Datetime, manipulação de dados, datas e horas
+## Datetime, manipulação de dados, datas e horas
 
 A classe DateTime serve para manipular datas e formatalas dentro dos padrões necessarios caso queira visualizar as especificações basta olhar na documentação do PHP:
 
@@ -100,7 +100,7 @@ Ficando assim:
 	$data->sub($intervalo);
 	var_dump($data);
 
-##Exceções em PHP
+## Exceções em PHP
 
 Quando a aplicação apresenta um comportamento inesperado nos trabalhamos com exceções, ela intemrrompe o funcionamento do código e nós podemos coletar diversos dados com as exceções e para isso usamos a classe Exception que pode ser vista aqui:
 
@@ -135,7 +135,7 @@ Sempre que se usa uma exceção o código para de funcionar e lança um fatal er
 	validarUsuario($usuario);
 
 
-###Capturando exceções com Try e Catch
+### Capturando exceções com Try e Catch
 
 Como o próprio nome já diz Try vem de tentar ou seja irá tentar executar uma coisa e se der errado o catch vai pegar o motivo que fez isso dar errado então adicionamos o seguinte bloco de código no codígo de cima, buscando melhorar a sua perfomance:
 
