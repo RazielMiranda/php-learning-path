@@ -254,4 +254,4 @@ Utilização do select:
 		echo '<br>'.'ID:'. $value['id'].'<br>'.'Descricao:'.$value['descricao'].'<hr>';
 }
 
-Após passar para essa estrutura fica facil para trasnformar tudo em OO.
+Após passar para essa estrutura fica facil para transformar tudo em OO.
