@@ -1,6 +1,6 @@
 # PHP: Orientação a objetos
 
-Orientaçãoa objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
+Orientação a objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
 
 ## Classes, modificadores e funções
 
@@ -58,7 +58,6 @@ E como fazer isso?
 
 Imagine o cenario de um banco, onde estamos trabalhando com saldo, quais são as formas de alterar o saldo de uma conta? ou com deposito ou com saque, então para isso se deve criar dois metodos que manipulem essa propriedade.
 
-
 ## Datetime, manipulação de dados, datas e horas
 
 A classe DateTime serve para manipular datas e formatalas dentro dos padrões necessarios caso queira visualizar as especificações basta olhar na documentação do PHP:
@@ -106,11 +105,11 @@ Quando a aplicação apresenta um comportamento inesperado nos trabalhamos com e
 
 https://www.php.net/manual/pt_BR/class.exception
 
-Para lançar uma essa usamos a sua instaciação e passamos a mensagem que desejamos em seu construtor ficando assim:
+Para lançar uma exceção usamos a sua instaciação e passamos a mensagem que desejamos em seu construtor ficando assim:
 
 	throw new Exception("Error Processing Request");
 
-Sempre que se usa uma exceção o código para de funcionar e lança um fatal error quando a exceção é usada sem captura (try e catch), exceções também são usadas para evitar validações com condicionais, como no exemplo abaixo:
+Sempre que se usa uma exceção o código para de funcionar e lança um fatal error quando a exceção é usada sem captura (try e catch). Exceções também são usadas para evitar validações com condicionais, como no exemplo abaixo:
 
 	//A função recebe o array usuario como parametro, em seguida faz uma verificação para saber se algum dos indices desse array estão vazios, caso estejam vai lançar a exceção de campos nao preenchidos. Senão retorna verdade e continua executando o código
 
