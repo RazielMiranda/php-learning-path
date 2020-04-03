@@ -254,25 +254,4 @@ Utilização do select:
 		echo '<br>'.'ID:'. $value['id'].'<br>'.'Descricao:'.$value['descricao'].'<hr>';
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Após passar para estrutura fica facil para trasnformar tudo em OO.
