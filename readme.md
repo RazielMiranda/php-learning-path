@@ -1,6 +1,6 @@
 # PHP: Orientação a objetos
 
-Orientação a objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
+Orientaçãoa objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
 
 ## Classes, modificadores e funções
 
@@ -58,6 +58,7 @@ E como fazer isso?
 
 Imagine o cenario de um banco, onde estamos trabalhando com saldo, quais são as formas de alterar o saldo de uma conta? ou com deposito ou com saque, então para isso se deve criar dois metodos que manipulem essa propriedade.
 
+
 ## Datetime, manipulação de dados, datas e horas
 
 A classe DateTime serve para manipular datas e formatalas dentro dos padrões necessarios caso queira visualizar as especificações basta olhar na documentação do PHP:
@@ -105,11 +106,11 @@ Quando a aplicação apresenta um comportamento inesperado nos trabalhamos com e
 
 https://www.php.net/manual/pt_BR/class.exception
 
-Para lançar uma exceção usamos a sua instaciação e passamos a mensagem que desejamos em seu construtor ficando assim:
+Para lançar uma essa usamos a sua instaciação e passamos a mensagem que desejamos em seu construtor ficando assim:
 
 	throw new Exception("Error Processing Request");
 
-Sempre que se usa uma exceção o código para de funcionar e lança um fatal error quando a exceção é usada sem captura (try e catch). Exceções também são usadas para evitar validações com condicionais, como no exemplo abaixo:
+Sempre que se usa uma exceção o código para de funcionar e lança um fatal error quando a exceção é usada sem captura (try e catch), exceções também são usadas para evitar validações com condicionais, como no exemplo abaixo:
 
 	//A função recebe o array usuario como parametro, em seguida faz uma verificação para saber se algum dos indices desse array estão vazios, caso estejam vai lançar a exceção de campos nao preenchidos. Senão retorna verdade e continua executando o código
 
@@ -160,6 +161,118 @@ Como o próprio nome já diz Try vem de tentar ou seja irá tentar executar uma 
 
 
 ## Banco de dados PDO com PHP
+
+PDO é uma abstração de como usar banco de dados em orientação a objetos utilizando data objects:
+
+https://www.php.net/manual/pt_BR/book.pdo.php
+
+Com o PDO nós não precisamos saber o que de fato está acontecendo no banco de dados, basta utilizar os metodos da classe PDO que o PHP faz o restante independente do banco de dados que vamos usar, a classe PDO auxilia a gente nisso, para lidar com banco de dados e suas operações básicas apelidadas de "CRUD" primeiro precisamos conectar com o banco de dados como no exemplo:
+
+	//Declarando a variavel que vai receber a classe PDO
+	$conexaoDB = null;
+
+	//Try para tentar a conexão
+	try {
+		
+		//Instanciando um novo objeto da classe PDO o primeiro parametro é o nome do DB que esta sendo usado, em seguida o HOST (Número de IP) em que se encontra. O Segundo parametro o nome da base de dados, terceiro o user dela, e depois a senha do DB.
+
+		$conexaoDB = new PDO('mysql:host=localhost;dbname=pdo' , 'root' , '');
+	
+	} catch (Exception $e) {
+
+		//Catch para caso haja algum erro em seguida o die
+		echo $e->getMessage();
+
+		die();
+	}
+
+	//Teste da variavel
+	var_dump($conexaoDB);
+
+	//Return dos dados da conexão para ser usado depois
+	return $conexaoDB;
+
+### Operações de CRUD com PDO:
+
+Após a conexão, nós podemos executar as operações do banco de dados para isso vamos usar uma sequencia de metodos:
+	
+Utilização com delete:
+
+	// 1 - Salvar o arquivo de conexão dentro de uma variavel
+	$conexaoDB = require 'connect.php';
+	
+	// 2 - Criar o SQL que deseja ser efetuado (insert, update, delete) no parametro de values nós usamos o '?' que siginifica um misterio de valor que mais a frente será decodificado pelo metodo prepare
+	$delete = 'delete from produtos where id = ?';
+
+	// 3 - Aqui a gente instancia o metodo prepare da classe PDO através do objeto conexãoDB (que está pronto para ser usado no arquivo connect.db) o metodo prepare serve para "preparar o SQL" da query que queremos executar a fim de evitar que ocorram SQL injection por isso passamos o '?' na query logo porque o metodo descriptografa isso.
+	$prepare = $conexaoDB->prepare($delete);
+
+	// 4 - Aqui usamos o bindParam que é um metodo da PDO, que evita que a query receba ataques para usa ele devemos passar os parametros da tabela que queremos defender e sinalizar a ordem deles como o primeiro parametro do metodo ou seja se tivesse 2 parametros usariamos dois metodos bind e assim por diante
+	$prepare->bindParam(1, $_GET['id']);
+
+	// 5 - Execução do SQL no DB
+	$prepare->execute();
+
+	// 6 - Contagem das linhas que foram afetadas na tabela
+	echo $prepare->rowCount();
+
+Utilização com insert:
+
+	$conexaoDB = require 'connect.php';
+	$insert = 'insert into produtos(descricao) values(?)';
+
+	$prepare = $conexaoDB->prepare($insert);
+
+	$prepare->bindParam(1, $_GET['descricao']);
+	$prepare->execute();
+
+	echo $prepare->rowCount();
+
+Utilização com update:
+
+	$conexaoDB = require 'connect.php';
+	$update = 'update produtos set descricao = ? where id = ?';
+
+	$prepare = $conexaoDB->prepare($update);
+
+	$prepare->bindParam(1, $_GET['descricao']);
+	$prepare->bindParam(2, $_GET['id']);
+
+	$prepare->execute();
+
+	echo $prepare->rowCount();
+
+Utilização do select:
+
+	$conexaoDB = require 'connect.php';
+
+	$select = 'select * from produtos';
+
+	echo "<h1> listagem produtos: </h1><hr>";
+
+	foreach ($conexaoDB->query($select) as $key => $value) {
+		echo '<br>'.'ID:'. $value['id'].'<br>'.'Descricao:'.$value['descricao'].'<hr>';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
