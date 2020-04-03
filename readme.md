@@ -1,6 +1,6 @@
 # PHP: Orientação a objetos
 
-Orientaçãoa objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
+Orientação a objetos se trata de simular a vida real em programação, tratando literalmente como um objeto o código.
 
 ## Classes, modificadores e funções
 
@@ -254,4 +254,4 @@ Utilização do select:
 		echo '<br>'.'ID:'. $value['id'].'<br>'.'Descricao:'.$value['descricao'].'<hr>';
 }
 
-Após passar para estrutura fica facil para trasnformar tudo em OO.
+Após passar para essa estrutura fica facil para trasnformar tudo em OO.
